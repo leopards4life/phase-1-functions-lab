@@ -18,8 +18,8 @@ function distanceTravelledInFeet(startingBlock, endingBlock) {
 }
 
 function calculatesFarePrice(startingBlock, endingBlock) {
-    distanceTravelledInFeet(startingBlock, endingBlock)
-    let farePrice = distanceInFeet * 2;
+    let distanceInFeet = distanceTravelledInFeet(startingBlock, endingBlock)
+    let farePrice;
     if (distanceInFeet <= 400) {
         farePrice = 0;
     } else if (distanceInFeet > 400 && distanceInFeet <= 2000) {
@@ -27,7 +27,7 @@ function calculatesFarePrice(startingBlock, endingBlock) {
     } else if (distanceInFeet > 2000 && distanceInFeet <= 2500) {
         farePrice = 25;
     } else if (distanceInFeet > 2500) {
-        return "Cannot travel that far.";
+        return "cannot travel that far";
     }
     return farePrice;
 }
